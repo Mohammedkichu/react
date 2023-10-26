@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <div>
+        
+        <form action="" method="post">
+            {% csrf_token %}
+             <div class ="container justify-content-center mt-5 w-50 ">
+                <h1 >Add medicine</h1><br>
+             <div class="row">
+                <div class="col-12">
+                  <div class="form-group">
+                    <label for="mname">Medicine name:</label>
+                     <input type="text" placeholder="Name of the medicine"  class="form-control" name="name" id="name">
+                  </div></div>
+                  <div class="col-12">
+                  <div class="form-group">
+                    <label for="description">description:</label>
+                    <input type="textarea" class="form-control" id="description"  placeholder="Enter description" name="description">
+                  </div></div>
+                  <div class="col-12">
+                  <div class="form-group">
+                    <label for="Price">price:</label>
+                    <input type="number" class="form-control" id="Price"  placeholder="Enter the price" name="Price">  
+                  </div> </div>
+                  <div class="col-12">
+                  <div class="form-group">
+                    <label for="availability">availability:</label>
+                    <input type="number" class="form-control" id="availability"  placeholder="Enter the availibiity" name="availability">  
+                  </div></div>
+                  <div class="col-12">
+                  <button type="submit" class="btn btn-primary">Submit</button><br><br>  
+             </div></div>
+             </div>
+        </form>
+      
+    </body>
+</html>

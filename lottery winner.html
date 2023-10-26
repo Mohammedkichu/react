@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Lottery Number Generator</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #b4deac;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+   
+  }
+  .container {
+    text-align: center;
+    padding: 20px;
+    border:2px solid rgb(57, 57, 134);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f1d689;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Random Lottery Number Generator</h1>
+  <button id="generateButton">Generate Winner</button>
+  <div id="winnerDisplay"></div>
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const generateButton = document.getElementById('generateButton');
+    const winnerDisplay = document.getElementById('winnerDisplay');
+
+    const lotteryTickets = [
+      'Ticket 001',
+      'Ticket 002',
+      'Ticket 003',
+      'Ticket 004',
+      'Ticket 005',
+      // Add more tickets here
+    ];
+
+    generateButton.addEventListener('click', function() {
+      if (lotteryTickets.length === 0) {
+        winnerDisplay.textContent = 'No more tickets left!';
+        return;
+      }
+
+      const randomIndex = Math.floor(Math.random() * lotteryTickets.length);
+      const winnerTicket = lotteryTickets.splice(randomIndex, 1)[0];
+
+      winnerDisplay.textContent = `Winner: ${winnerTicket}`;
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<form action="" method="post">
+ {% csrf_token %} 
+
+  <div class ="container-sm mt-5 w-50 bg-light">     
+  <br><h1 align="center">Add medicine</h1><br>
+  <div class="row">
+    <div class="col">
+  <div class="form-group">
+    <label for="mname">Medicine name</label>
+     <input type="text" placeholder="Name of the medicine"  class="form-control" name="mname" id="mname"required>
+     
+  </div>
+  </div>
+  </div>
+  <div class="form-group">
+    <label for="description">description</label>
+    <input type="textarea" class="form-control" id="description"  placeholder="Enter description" name="description"required>
+
+</div>
+<div class="form-group">
+    <label for="Price">price</label>
+    <input type="text" class="form-control" id="Price" value="{{ form.price.value }}" placeholder="Enter the price" name="Price"required>
+   
+</div>
+<div class="form-group">
+    
+    <label for="expiry_date">expiry_date</label>
+    <input type="date" class="form-control" placeholder="Enter the"pattern="\d{4}-\d{2}-\d{2}" title="Enter a date in the format YYYY-MM-DD" name="expiry_date"required>
+   
+</div>
+<div class="form-group">
+
+  <div class="form-group">
+    <label for="c">side effects</label>
+        <input type="textarea" class="form-control"  placeholder="enter the side effects" id="side_effect" name="side_effect"required>
+    
+  </div>
+        <button type="submit" class="btn btn-primary">Submit</button><br><br>
+  </div>   
+</form>
+
+</body>
+</html>
+
+

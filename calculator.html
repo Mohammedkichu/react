@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>calculator</title>
+<style>
+  .calculator{
+    border: 2px solid blue;
+    padding:20px;
+    background-color: rgb(205, 95, 95);
+    width: 500px;
+    height: 250px;
+    text-align: center;
+  }
+  body{
+    font-family: Arial, sans-serif;
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+  }
+  
+</style>
+<body>
+  <div class="calculator">
+<h1>calculator</h1>
+<p>First Number: <input id="firstnumber"></p>
+<p>Second Number: <input id="secondnumber"></p>
+<select id="operators">
+  <option value="add">+</option>
+  <option value="sub">-</option>
+  <option value="mul">*</option>
+  <option value="div">/</option>
+</select>
+
+<button onclick="Result()">=</button>
+<input type="text" id="answer">
+
+
+<script>
+  function Result() {
+
+    let operator= document.getElementById("operators").value;
+    let a=parseInt(document.getElementById("firstnumber").value);
+    let b = parseInt(document.getElementById("secondnumber").value);
+    let c=0;
+
+    if (operator === "add") {
+      add();
+    } else if (operator === "sub") {
+      sub();
+    } else if (operator === "mul") {
+      mul();
+    } else if (operator === "div") {
+      div();
+    }
+
+
+  function add() {
+
+    c = a + b;
+    result1()
+    
+  }
+
+  function sub() {
+
+    c = a - b;
+    result1()
+ 
+  }
+
+  function mul() {
+   
+    c = a * b;
+    result1()
+  
+  }
+
+  function div() {
+
+  c = a / b;
+  result1()
+  
+  }
+    function result1(){
+  	document.getElementById("answer").value=c;
+  }
+}
+</script>
+</div>
+</body>
+
+
+
+</html>
